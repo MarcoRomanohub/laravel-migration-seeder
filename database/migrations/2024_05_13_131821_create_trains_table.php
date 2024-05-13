@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('company', 70);
             $table->string('slug', 100)->unique();
-            $table->string('departure_station', 70);
-            $table->string('arrival_station', 70);
+            $table->string('departure_station', 30);
+            $table->string('arrival_station', 30);
             $table->decimal('departure_time', 4, 2)->unsigned();
             $table->decimal('arrival_time', 4, 2)->unsigned();
             $table->integer('code');
             $table->tinyInteger('number_of_carriages');
-            $table->boolean('in_time')->default(true);
-            $table->boolean('deleted')->default(false);
+
             $table->timestamps();
         });
     }
