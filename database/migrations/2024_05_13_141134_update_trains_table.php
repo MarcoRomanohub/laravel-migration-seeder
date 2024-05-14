@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->boolean('in_time')->default(true)->after('number_of_carriages');
+            $table->boolean('on_time')->default(true)->after('number_of_carriages');
             $table->boolean('deleted')->default(false)->after('number_of_carriages');
         });
     }
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->dropColumn('in_time');
+            $table->dropColumn('on_time');
             $table->dropColumn('deleted');
         });
     }

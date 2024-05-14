@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('slug', 100)->unique();
             $table->string('departure_station', 30);
             $table->string('arrival_station', 30);
-            $table->decimal('departure_time', 4, 2)->unsigned();
-            $table->decimal('arrival_time', 4, 2)->unsigned();
-            $table->integer('code');
+            $table->time('departure_time');
+            $table->time('arrival_time');
+            $table->char('code', 12);
             $table->tinyInteger('number_of_carriages');
 
             $table->timestamps();
